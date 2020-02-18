@@ -1,46 +1,48 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="converter.css">
-    <title>$ Currency Converter</title>
-  </head>
-  <body>
-    <div class="mainbox">
-      <div class="input-group">
-  <input type="text" class="form-control" aria-label="Text input with segmented dropdown button" placeholder="Enter Amount">
-  <div class="input-group-append">
-    <button type="button" class="btn btn-outline-primary currency-buttons">Select Currency</button>
-    <button type="button" class="btn btn-outline dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-      <span class="sr-only">Toggle Dropdown</span>
-    </button>
-    <div class="dropdown-menu">
-      <a class="dropdown-item" href="#">Currency</a>
-      <a class="dropdown-item" href="#">$</a>
-      <a class="dropdown-item" href="#">Euros</a>
-    </div>
-  </div>
-</div>
-  <img id="image" src="up-and-down.png">
-<div class="input-group second-input">
-<input type="text" class="form-control" aria-label="Text input with segmented dropdown button" placeholder="Enter Amount">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<link rel="stylesheet" href="converter.css">
+	<title>$ Currency Converter</title>
+</head>
+<body>
+	<div class="mainbox">
+		<div class="input-group">
+			<input type="text" class="form-control" aria-label="Text input with segmented dropdown button" placeholder="Enter Amount">
+			<div class="input-group-append">
+				<button type="button" class="btn btn-outline-primary currency-buttons">Select Currency</button>
+				<button type="button" class="btn btn-outline dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					<span class="sr-only">Toggle Dropdown</span>
+				</button>
+				<div class="dropdown-menu">
+					<a class="dropdown-item" href="#">Currency</a>
+					<a class="dropdown-item" href="#">$</a>
+					<a class="dropdown-item" href="#">Euros</a>
+				</div>
+			</div>
+		</div>
+		<img id="image" src="up-and-down.png">
+		<div class="input-group second-input">
+			<input type="text" class="form-control" aria-label="Text input with segmented dropdown button" placeholder="Enter Amount">
 
-<div class="input-group-append second-input">
-<button type="button" class="btn btn-outline-primary">Get Currency</button>
-<button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-  <span class="sr-only">Toggle Dropdown</span>
-</button>
-<div class="dropdown-menu">
-  <a class="dropdown-item" href="#">USD</a>
-  <a class="dropdown-item" href="#">LEI</a>
-  <a class="dropdown-item" href="#">EUR</a>
-</div>
-  <button id="submit-button" class="button is-primary" name="button">Get Amount</button>
-</div>
-
-  </body>
+			<div class="input-group-append second-input">
+				<button type="button" class="btn btn-outline-primary">Get Currency</button>
+				<button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					<span class="sr-only">Toggle Dropdown</span>
+				</button>
+				<div class="dropdown-menu">
+					<a class="dropdown-item" href="#">USD</a>
+					<a class="dropdown-item" href="#">LEI</a>
+					<a class="dropdown-item" href="#">EUR</a>
+				</div>
+				<button id="submit-button" class="button is-primary" name="button">Get Amount</button>
+			</div>
+		</div>
+	</div>
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
 </html>

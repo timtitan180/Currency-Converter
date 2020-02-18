@@ -1,2 +1,3 @@
 # Currency-Converter
-An application that converts currency
+
+An application that converts currency.
