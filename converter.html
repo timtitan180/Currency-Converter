@@ -1,9 +1,12 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-<head>
+	<html lang="en" dir="ltr">
+	<head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3	uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 	<link rel="stylesheet" href="converter.css">
 	<title>$ Currency Converter</title>
 </head>
@@ -15,11 +18,57 @@
 				<button type="button" class="btn btn-outline-primary currency-buttons">Select Currency</button>
 				<button type="button" class="btn btn-outline dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 					<span class="sr-only">Toggle Dropdown</span>
-				</button>
 				<div class="dropdown-menu">
-					<a class="dropdown-item" href="#">Currency</a>
-					<a class="dropdown-item" href="#">$</a>
-					<a class="dropdown-item" href="#">Euros</a>
+					<ul>
+					<li><a class="dropdown-item base US" href="#">US</a></li>
+					<li><a class="dropdown-item base ARS" href="#">ARS</a></li>
+					<li><a class = "dropdown-item-AUD" href="#">AUD</a></li>
+					<li><a class="dropdown-item base BGN" href="#">BGN</a></li>
+					<li><a class="dropdown-item base BSD" href="#">BSD</a></li>
+					<li><a class="dropdown-item base CAD" href="#">CAD</a><li>
+					<li><a class="dropdown-item base CHF" href="#">CHF</a></li>
+					<li><a class="dropdown-item base CLP" href="#">CLP</a></li>
+					<li><a class="dropdown-item base CNY" href="#">CNY</a></li>
+					<li><a class="dropdown-item base COP" href="#">COP</a></li>
+					<li><a class="dropdown-item base CZK" href="#">CZK</a></li>
+					<li><a class="dropdown-item base DKK" href="#">DKK</a></li>
+					<li><a class="dropdown-item base DOP" href="#">DOP</a></li>
+					<li><a class="dropdown-item base EGP" href="#">EGP</a></li>
+					<li><a class="dropdown-item base EUR" href="#">EUR</a></li>
+					<li><a class="dropdown-item base FJD" href="#">FJD</a></li>
+					<li><a class="dropdown-item base GBP" href="#">GBP</a></li>
+					<li><a class="dropdown-item base GTQ" href="#">GTQ</a></li>
+					<li><a class="dropdown-item base HKD" href="#">HKD</a></li>
+					<li><a class="dropdown-item base HRK" href="#">HRK</a></li>
+					<li><a class="dropdown-item base HUF" href="#">HUF</a></li>
+					<li><a class="dropdown-item base IDR" href="#">IDR</a></li>
+					<li><a class="dropdown-item base ILS" href="#">ILS</a></li>
+					<li><a class="dropdown-item base INR" href="#">INR</a></li>
+					<li><a class="dropdown-item base ISK" href="#">ISK</a></li>
+					<li><a class="dropdown-item base JPY" href="#">JPY</a></li>
+					<li><a class="dropdown-item base KRW" href="#">KRW</a></li>
+					<li><a class="dropdown-item base KZT" href="#">KZT</a></li>
+					<li><a class="dropdown-item base MXN" href="#">MXN</a></li>
+					<li><a class="dropdown-item base-MYR" href="#">MYR</a></li>
+					<li><a class="dropdown-item base NOK" href="#">NOK</a></li>
+					<li><a class="dropdown-item base NSD" href="#">NSD</a></li>
+					<li><a class="dropdown-item base PAB" href="#">PAB</a></li>
+					<li><a class="dropdown-item base PEN" href="#">PEN</a></li>
+					<li><a class="dropdown-item base PHP" href="#">PHP</a></li>
+					<li><a class="dropdown-item base PKR" href="#">PKR</a></li>
+					<li><a class="dropdown-item base PLN" href="#">PLN</a></li>
+					<li><a class="dropdown-item base PYG" href="#">PYG</a></li>
+					<li><a class="dropdown-item base RON" href="#">RON</a></li>
+					<li><a class="dropdown-item base RUB" href="#">RUB</a></li>
+					<li><a class="dropdown-item base SAR" href="#">SAR</a></li>
+					<li><a class="dropdown-item base SEK" href="#">SEK</a></li>
+					<li><a class="dropdown-item base SGD" href="#">SGD</a></li>
+					<li><a class="dropdown-item base THB" href="#">THB</a></li>
+					<li><a class="dropdown-item base TRY" href="#">TRY</a></li>
+					<li><a class="dropdown-item base UAH" href="#">UAH</a></li>
+					<li><a class="dropdown item base UYU" href="#">UYU</a></li>
+					<li><a class="dropwdown item base ZAR" href=#>ZAR</a></li>
+				</ul>
 				</div>
 			</div>
 		</div>
@@ -31,18 +80,69 @@
 				<button type="button" class="btn btn-outline-primary">Get Currency</button>
 				<button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 					<span class="sr-only">Toggle Dropdown</span>
-				</button>
 				<div class="dropdown-menu">
-					<a class="dropdown-item" href="#">USD</a>
-					<a class="dropdown-item" href="#">LEI</a>
-					<a class="dropdown-item" href="#">EUR</a>
+					<ul>
+					<li><a class="dropdown-item base US">US</a></li>
+					<li><a class="dropdown-item base ARS">ARS</a></li>
+					<li><a class="dropdown-item base AUD" href="#">AUD</a></li>
+					<li><a class="dropdown-item base BGN" href="#">BGN</a></li>
+					<li><a class="dropdown-item base BSD" href="#">BSD</a></li>
+					<li><a class="dropdown-item base CAD" href="#">CAD</a><li>
+					<li><a class="dropdown-item base CHF" href="#">CHF</a><li>
+					<li><a class="dropdown-item base CLP" href="#">CLP</a><li>
+					<li><a class="dropdown-item base CNY" href="#">CNY</a></li>
+					<li><a class="dropdown-item base COP" href="#">COP</a></li>
+					<li><a class="dropdown-item base CZK" href="#">CZK</a></li>
+					<li><a class="dropdown-item base DKK" href="#">DKK</a></li>
+					<li><a class="dropdown-item base DOP" href="#">DOP</a></li>
+					<li><a class="dropdown-item base EGP" href="#">EGP</a></li>
+					<li><a class="dropdown-item base EUR" href="#">EUR</a></li>
+					<li><a class="dropdown-item base FJD" href="#">FJD</a></li>
+					<li><a class="dropdown-item base GBP" href="#">GBP</a></li>
+					<li><a class="dropdown-item base GTQ" href="#">GTQ</a></li>
+					<li><a class="dropdown-item base HKD" href="#">HKD</a></li>
+					<li><a class="dropdown-item base HRK" href="#">HRK</a></li>
+					<li><a class="dropdown-item base HUF" href="#">HUF</a></li>
+					<li><a class="dropdown-item base IDR" href="#">IDR</a><li>
+					<li><a class="dropdown-item base ILS" href="#">ILS</a><li>
+					<li><a class="dropdown-item base INR" href="#">INR</a></li>
+					<li><a class="dropdown-item base ISK" href="#">ISK</a></li>
+					<li><a class="dropdown-item base JPY" href="#">JPY</a></li>
+					<li><a class="dropdown-item base KRW" href="#">KRW</a></li>
+					<li><a class="dropdown-item base KZT" href="#">KZT</a></li>
+					<li><a class="dropdown-item base MXN" href="#">MXN</a></li>
+					<li><a class="dropdown-item base MYR" href="#">MYR</a></li>
+					<li><a class="dropdown-item base-NOK" href="#">NOK</a></li>
+					<li><a class="dropdown-item base NSD" href="#">NSD</a></li>
+					<li><a class="dropdown-item base PAB" href="#">PAB</a></li>
+					<li><a class="dropdown-item base PEN" href="#">PEN</a></li>
+					<li><a class="dropdown-item base PHP" href="#">PHP</a></li>
+					<li><a class="dropdown-item base PKR" href="#">PKR</a></li>
+					<li><a class="dropdown-item base PLN" href="#">PLN</a></li>
+					<li><a class="dropdown-item base PYG" href="#">PYG</a></li>
+					<li><a class="dropdown-item base RON" href="#">RON</a></li>
+					<li><a class="dropdown-item base RUB" href="#">RUB</a></li>
+					<li><a class="dropdown-item base SAR" href="#">SAR</a></li>
+					<li><a class="dropdown-item base SEK" href="#">SEK</a></li>
+					<li><a class="dropdown-item base SGD" href="#">SGD</a></li>
+					<li><a class="dropdown-item base THB" href="#">THB</a></li>
+					<li><a class="dropdown-item base TRY" href="#">TRY</a></li>
+					<li><a class="dropdown-item base UAH" href="#">UAH</a></li>
+					<li><a class="dropdown item base UYU" href="#">UYU</a></li>
+					<li><a class="dropwdown item base ZAR" href=#>ZAR</a></li>
+				</ul>
+			</div>
+			</button>
+				<div>
+					<p id="error-message">Please enter an integer value e.g. 5</p>
 				</div>
-				<button id="submit-button" class="button is-primary" name="button">Get Amount</button>
+				<button id="button1" class="button is-primary" name="button">Get Amount</button>
 			</div>
 		</div>
 	</div>
 	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3	uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="converter.js"></script>
 </body>
 </html>
