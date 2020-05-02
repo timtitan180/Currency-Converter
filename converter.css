@@ -1,3 +1,8 @@
+@media only screen and (max-width: 479px) {
+	.mainbox{
+		width: 90%;
+	}
+}
 
 .mainbox {
 	margin-top:15px;
@@ -8,7 +13,7 @@
 	border: 1px solid blue;
 	height: 500px;
 	width: 400px;
-	margin-left: 663px;
+	margin-left: 200px;
 	margin-top: 200px;
 	box-shadow: 1px 2px;
 }
@@ -16,10 +21,15 @@
 	margin-top: 85px
 }
 
-#image {
+.image {
+	transition: .5s ease;
 	position: absolute;
 	top: 98px;
 	right: 142px;
+}
+.image-container:hover .image {
+	background-color: aqua;
+	opacity: 0.2;
 }
 
 .second-input {
@@ -46,6 +56,13 @@
 
 .form-control {
 	color: purple;
+}
+.wrapper {
+	text-align: center;
+}
+#button1 {
+	position: static;
+	top: 50%;
 }
 #error-message {
 	display:none;
