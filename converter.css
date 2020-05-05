@@ -13,7 +13,7 @@
 	border: 1px solid blue;
 	height: 500px;
 	width: 400px;
-	margin-left: 200px;
+	margin-left: 35%;
 	margin-top: 200px;
 	box-shadow: 1px 2px;
 }
@@ -37,17 +37,19 @@
 	color: green;
 }
 
-.second-drop {
-	display: none;
+#after-second-input {
+	color: #5712de;
+	border-color:#5712de;
 }
 
-#submit-button {
-	position: relative;
-	display: inline-block;
-	text-align: center;
-	top: 285px;
-	margin-right: 156px;
+#after-second-input:hover {
+	background-color: #5712de;
+	color: white;
+}
 
+#secondlist {
+	border-color: #5d17e1;
+	color: #5d17e1;
 }
 
 .currency-buttons:hover {
@@ -58,11 +60,14 @@
 	color: purple;
 }
 .wrapper {
-	text-align: center;
+		align-items: center;
+		justify-content: center;
 }
 #button1 {
-	position: static;
-	top: 50%;
+	top: 70%;
+	left: 45%;
+	margin: 180px -49px;
+	padding-bottom: 9px;
 }
 #error-message {
 	display:none;

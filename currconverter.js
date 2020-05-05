@@ -15,10 +15,12 @@ for(var i=0; i<first.length; i++) {
   request.onload = function() {
   var data = JSON.parse(request.response);
   var Convertingfrom = data.rates['' + base + ''] * input.value;
+  document.getElementById("currency-label").textContent = base;
 for(var j=0;j<second.length; j++) {
     second[j].addEventListener("click",function() {
     target = event.target.textContent;
     result = Convertingfrom * data.rates['' + target + ''];
+    document.getElementById("after-second-input").textContent = target;
     });
 }
   };
@@ -28,6 +30,4 @@ function getResult() {
 var show = document.querySelectorAll("input")[1].value = result;
 };
 
-document.getElementbyId("button1").addEventListener("click",getResult);
- 
- 
+document.getElementById("button1").addEventListener("click",getResult);
