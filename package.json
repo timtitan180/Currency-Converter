@@ -1,0 +1,21 @@
+{
+  "name": "currency-converter",
+  "version": "1.0.0",
+  "description": "Converts currency",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": " node index.js"
+
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/timtitan180/Currency-Converter.git"
+  },
+  "author": "Timothy Tudosa",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/timtitan180/Currency-Converter/issues"
+  },
+  "homepage": "https://github.com/timtitan180/Currency-Converter#readme"
+}
