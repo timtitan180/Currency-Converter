@@ -4,10 +4,10 @@ const path = require('path');
 const app = express();
 port = 1255;
 
-app.use('/',express.static('public'));
+app.use(express.static('public'));
 
 app.get('/',function(request,response){
-    response.send();
+    response.sendFile(__dirname + '/converter.html');
 });
 
 app.listen(port,function(err){
