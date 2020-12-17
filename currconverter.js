@@ -1,5 +1,6 @@
+alert("This is from outside the public directory");
 
-ar url = "https://api.exchangerate-api.com/v4/latest/";
+var url = "https://api.exchangerate-api.com/v4/latest/";
 
 var input = document.querySelectorAll("input")[0];
 
@@ -45,6 +46,7 @@ switchValuesButton.addEventListener("click",switchValues);
          var convertFrom = data.rates[e.target.id] * input;
          console.log(convertFrom);
          secondList.addEventListener("click",function(e){
+            document.getElementById("after-second-input").innerHTML = this.id;
              var result = data.rates[this.id] * convertFrom;
              return result
  
