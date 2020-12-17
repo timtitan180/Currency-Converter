@@ -6,6 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 	<link rel="stylesheet" href="converter.css">
+	<script type="text/javascript" src="currconverter.js"></script>
 	<title>$ Currency Converter</title>
 </head>
 <body>
@@ -38,62 +39,63 @@
 	<div class="container">
 	<div class="mainbox">
 		<div class="input-group">
-			<input type="text" class="form-control" aria-label="Text input with segmented dropdown button" placeholder="Enter Amount">
+			<input name="firstInput" type="text" class="form-control" aria-label="Text input with segmented dropdown button" placeholder="Enter Amount">
 			<div class="input-group-append">
 				<button type="button" class="btn btn-outline-primary" id="currency-label"><span id="after-input"></button>
 				<button type="button" class="btn btn-outline dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 					<span class="sr-only">Toggle Dropdown</span>
-				<div class="dropdown-menu" id="first">
-					<ul style="list-style-type:none" id="first-list">
-						<li id="USD">USD</li>
-						<li id="AED">AED</li>
-						<li id="ARS">ARS</li>
-						<li id="AUD">AUD</li>
-						<li id="BGN">BGN</li>
-						<li id="BSD">BSD</li>
-						<li id="CAD">CAD<li>
-						<li id="CHF">CHF</li>
-						<li id="CLP">CLP</li>
-						<li id="CNY">CNY</li>
-						<li id="COP">COP</li>
-						<li id="CZK">CZK</li>
-						<li id="DKK">DKK</li>
-						<li id="DOP">DOP</li>
-						<li id="EGP">EGP</li>
-						<li id="EUR">EUR</li>
-						<li id="FJD">FJD</li>
-						<li id="GBP">GBP</li>
-						<li id="GTQ">GTQ</li>
-						<li id="HKD">HKD</li>
-						<li id="HRK">HRK</li>
-						<li id="HUF">HUF</li>
-						<li id="IDR">IDR</li>
-						<li id="ILS">ILS</li>
-						<li id="INR">INR</li>
-						<li id="ISK">ISK</li>
-						<li id="JPY">JPY</li>
-						<li id="KRW">KRW</li>
-						<li id="KZT">KZT</li>
-						<li id="MXN">MXN</li>
-						<li id="MYR">MYR</li>
-						<li id="NOK">NOK</li>
-						<li id="NSD">NSD</li>
-						<li id="PAB">PAB</li>
-						<li id="PEN">PEN</li>
-						<li id="PHP">PHP</li>
-						<li id="PKR">PKR</li>
-						<li id="PLN">PLN</li>
-						<li id="PYG">PYG</li>
-						<li id="RON">RON</li>
-						<li id="RUB">RUB</li>
-						<li id="SAR">SAR</li>
-						<li id="SEK">SEK</li>
-						<li id="SGD">SGD</li>
-						<li id="THB">THB</li>
-						<li id="TRY">TRY</li>
-						<li id="UAH">UAH</li>
-						<li id="UYU">UYU</li>
-						<li id="ZAR">ZAR</li>
+				<div class="dropdown-menu" id="first-dropdown">
+					<ul class="list" id="first-list">
+						<li id="USD">United States Dollar</li>
+						<li id="AED">Arab Emirates Dirham</li>
+						<li id="ARS">Argentinian Nuevo Peso</li>
+						<li id="AUD">Australian Dollar</li>
+						<li id="BGN">Bulgarian Lev</li>
+						<li id="BSD">Bahamian Dollar</li>
+						<li id="CAD">Canadian Dollar<li>
+						<li id="CHF">Swiss Franc</li>
+						<li id="CLP">Chilean Peso</li>
+						<li id="CNY">Chinese Yuan</li>
+						<li id="COP">Colombian Peso</li>
+						<li id="CZK">Czech Koruna</li>
+						<li id="DKK">Danish Krone</li>
+						<li id="DOP">Dominican Peso</li>
+						<li id="EGP">Egyptian Pound</li>
+						<li id="EUR">Euro</li>
+						<li id="FJD">Fijian Dollar</li>
+						<li id="GBP">Great Britain Pound Sterling</li>
+						<li id="GTQ">Guatemalan Quetzal</li>
+						<li id="HKD">Hong Kong Dollar</li>
+						<li id="HRK">Croation Kuna</li>
+						<li id="HUF">Hungarian Forint </li>
+						<li id="IDR">Indonesian Rupiah</li>
+						<li id="ILS">Israel New Shekel</li>
+						<li id="INR">Indian Rupee</li>
+						<li id="ISK">Icelandic króna</li>
+						<li id="JPY">Japanese Yen</li>
+						<li id="KRW">South Korean Won/li>
+						<li id="KZT">Kazakhstan Tenge</li>
+						<li id="MXN">Mexican Peso</li>
+						<li id="MYR">Malaysian Ringgit</li>
+						<li id="NOK">
+							Norwegian Krone</li>
+						<li id="NSD">New Zealand Dollar</li>
+						<li id="PAB"> Panamanian Balboa</li>
+						<li id="PEN">Peruvian Sol</li>
+						<li id="PHP">Philippine Peso</li>
+						<li id="PKR">Pakistani Rupee</li>
+						<li id="PLN">Polish Złoty</li>
+						<li id="PYG">Paraguayan Guaraní</li>
+						<li id="RON">Romanian Leu</li>
+						<li id="RUB">Russian Ruble</li>
+						<li id="SAR">Saudi Riyal</li>
+						<li id="SEK">Swedish Krona</li>
+						<li id="SGD">Singapore Dollar</li>
+						<li id="THB">Thai Baht</li>
+						<li id="TRY">Turkish Lira </li>
+						<li id="UAH">Ukrainian Hryvnia</li>
+						<li id="UYU">Uruguayan Peso</li>
+						<li id="ZAR">South African Rand</li>
 					</ul>
 				</div>
 			</div>
@@ -102,64 +104,65 @@
 		<img class="image" src="up-and-down.png">
 		</div>
 		<div class="input-group second-input">
-			<input type="text" placeholder="Get Amount Here" class="form-control" aria-label="Text input with segmented dropdown button">
+			<input name="secondInput" id="second-input" type="text" placeholder="Get Amount Here" class="form-control" aria-label="Text input with segmented dropdown button">
 
 			<div class="input-group-append second-input">
-				<button type="button" id="after-second-input" class="btn btn-outline-secondary"></button>
+				<button type="button" id="second-currency-label" class="btn btn-outline-secondary"></button>
 				<button type="button" id="secondlist" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 					<span class="sr-only">Toggle Dropdown</span>
-				<div class="dropdown-menu" id="second-list">
-					<ul style="list-style-type:none" id="second-list">
-						<li id="USD">USD</li>
-						<li id="AED">AED</li>
-						<li id="ARS">ARS</li>
-						<li id="AUD">AUD</li>
-						<li id="BGN">BGN</li>
-						<li id="BSD">BSD</li>
-						<li id="CAD">CAD<li>
-						<li id="CHF">CHF</li>
-						<li id="CLP">CLP</li>
-						<li id="CNY">CNY</li>
-						<li id="COP">COP</li>
-						<li id="CZK">CZK</li>
-						<li id="DKK">DKK</li>
-						<li id="DOP">DOP</li>
-						<li id="EGP">EGP</li>
-						<li id="EUR">EUR</li>
-						<li id="FJD">FJD</li>
-						<li id="GBP">GBP</li>
-						<li id="GTQ">GTQ</li>
-						<li id="HKD">HKD</li>
-						<li id="HRK">HRK</li>
-						<li id="HUF">HUF</li>
-						<li id="IDR">IDR</li>
-						<li id="ILS">ILS</li>
-						<li id="INR">INR</li>
-						<li id="ISK">ISK</li>
-						<li id="JPY">JPY</li>
-						<li id="KRW">KRW</li>
-						<li id="KZT">KZT</li>
-						<li id="MXN">MXN</li>
-						<li id="MYR">MYR</li>
-						<li id="NOK">NOK</li>
-						<li id="NSD">NSD</li>
-						<li id="PAB">PAB</li>
-						<li id="PEN">PEN</li>
-						<li id="PHP">PHP</li>
-						<li id="PKR">PKR</li>
-						<li id="PLN">PLN</li>
-						<li id="PYG">PYG</li>
-						<li id="RON">RON</li>
-						<li id="RUB">RUB</li>
-						<li id="SAR">SAR</li>
-						<li id="SEK">SEK</li>
-						<li id="SGD">SGD</li>
-						<li id="THB">THB</li>
-						<li id="TRY">TRY</li>
-						<li id="UAH">UAH</li>
-						<li id="UYU">UYU</li>
-						<li id="ZAR">ZAR</li>
-					</ul>
+				<div class="dropdown-menu" id="second-dropdown">
+					<ul class="list" id="second-list">
+								<li class="USD">United States Dollar</li>
+								<li class="AED">Arab Emirates Dirham</li>
+								<li class="ARS">Argentinian Nuevo Peso</li>
+								<li class="AUD">Australian Dollar</li>
+								<li class="BGN">Bulgarian Lev</li>
+								<li class="BSD">Bahamian Dollar</li>
+								<li class="CAD">Canadian Dollar<li>
+								<li class="CHF">Swiss Franc</li>
+								<li class="CLP">Chilean Peso</li>
+								<li class="CNY">Chinese Yuan</li>
+								<li class="COP">Colombian Peso</li>
+								<li class="CZK">Czech Koruna</li>
+								<li class="DKK">Danish Krone</li>
+								<li class="DOP">Dominican Peso</li>
+								<li class="EGP">Egyptian Pound</li>
+								<li class="EUR">Euro</li>
+								<li class="FJD">Fijian Dollar</li>
+								<li class="GBP">Great Britain Pound Sterling</li>
+								<li class="GTQ">Guatemalan Quetzal</li>
+								<li class="HKD">Hong Kong Dollar</li>
+								<li class="HRK">Croation Kuna</li>
+								<li class="HUF">Hungarian Forint </li>
+								<li class="IDR">Indonesian Rupiah</li>
+								<li class="ILS">Israel New Shekel</li>
+								<li class="INR">Indian Rupee</li>
+								<li class="ISK">Icelandic króna</li>
+								<li class="JPY">Japanese Yen</li>
+								<li class="KRW">South Korean Won/li>
+								<li class="KZT">Kazakhstan Tenge</li>
+								<li class="MXN">Mexican Peso</li>
+								<li class="MYR">Malaysian Ringgit</li>
+								<li class="NOK">
+									Norwegian Krone</li>
+								<li class="NSD">New Zealand Dollar</li>
+								<li class="PAB"> Panamanian Balboa</li>
+								<li class="PEN">Peruvian Sol</li>
+								<li class="PHP">Philippine Peso</li>
+								<li class="PKR">Pakistani Rupee</li>
+								<li class="PLN">Polish Złoty</li>
+								<li class="PYG">Paraguayan Guaraní</li>
+								<li class="RON">Romanian Leu</li>
+								<li class="RUB">Russian Ruble</li>
+								<li class="SAR">Saudi Riyal</li>
+								<li class="SEK">Swedish Krona</li>
+								<li class="SGD">Singapore Dollar</li>
+								<li class="THB">Thai Baht</li>
+								<li class="TRY">Turkish Lira </li>
+								<li class="UAH">Ukrainian Hryvnia</li>
+								<li class="UYU">Uruguayan Peso</li>
+								<li class="ZAR">South African Rand</li>
+							</ul>
 			</div>
 			</button>
 				<div>
@@ -171,10 +174,10 @@
 		</div>
 			<div class="wrapper">
 				<button id="button1" class="btn btn-outline-primary">Get Amount</button>
+
 			</div>
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-<script type="text/javascript" src="currconverter.js"></script>
 </body>
 </html>

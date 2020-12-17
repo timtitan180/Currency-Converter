@@ -8,20 +8,25 @@ a:hover {
 	color: blue;
 }
 .mainbox {
+	border-radius: 2%;
 	margin-top:15px;
 	position: relative;
 	display: inline-block;
 	text-align: center;
 	background-color: white;
-	border: 1px solid blue;
+	border: 1px solid rgb(226, 226, 233);
 	height: 500px;
 	width: 400px;
 	margin-left: 35%;
 	margin-top: 200px;
-	box-shadow: 1px 2px;
+	box-shadow: 1px 2px 8px 3px;
 }
 #first-textbox {
 	margin-top: 85px
+}
+
+.list {
+	list-style-type: none;
 }
 
 .image {

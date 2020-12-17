@@ -37,6 +37,10 @@
 	color: green;
 }
 
+.list {
+	list-style-type: none;
+}
+
 #after-second-input {
 	color: #5712de;
 	border-color:#5712de;
@@ -77,4 +81,8 @@
 #final {
 	display: none;
 	position: relative;
+}
+
+#hiddenInput {
+	visibility: hidden;
 }
