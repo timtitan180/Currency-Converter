@@ -46,7 +46,7 @@ switchValuesButton.addEventListener("click",switchValues);
          var convertFrom = data.rates[e.target.id] * input;
          console.log(convertFrom);
          secondList.addEventListener("click",function(e){
-            document.getElementById("after-second-input").innerHTML = this.id;
+            document.getElementById("after-second-input").innerHTML = e.target.id;
              var result = data.rates[this.id] * convertFrom;
              return result
  
