@@ -31,3 +31,7 @@ var show = document.querySelectorAll("input")[1].value = result;
 };
 
 document.getElementById("button1").addEventListener("click",getResult);
+
+ReactDOM.render(
+ document.getElementById("root")
+);
