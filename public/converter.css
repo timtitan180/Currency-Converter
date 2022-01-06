@@ -4,6 +4,10 @@
 	}
 }
 
+body {
+	background-color: rgba(250,250,250,0.7);
+}
+
 a:hover {
 	color: blue;
 }
@@ -30,14 +34,14 @@ a:hover {
 }
 
 .image {
+	border-radius: 20px;
 	transition: .5s ease;
 	position: absolute;
 	top: 98px;
-	right: 142px;
+	right: 170px;
 }
 .image-container:hover .image {
-	background-color: aqua;
-	opacity: 0.2;
+	box-shadow:inset 0 1px 2px 1px purple;
 }
 
 .second-input {
@@ -85,4 +89,23 @@ a:hover {
 #final {
 	display: none;
 	position: relative;
+}
+
+
+/* .currency:hover {
+	background-color: #2a2a72;
+background-image: linear-gradient(315deg, #2a2a72 0%, #009ffd 74%);
+} */
+
+#first-list li:hover {
+	color:white;
+	background-color: #2a2a72;
+	background-image: linear-gradient(315deg, #2a2a72 0%, #009ffd 74%);
+}
+
+
+#second-list li:hover {
+	color:white;
+	background-color:#9921e8;
+	background-image:linear-gradient(315deg, #9921e8 0%, #5f72be 74%);	
 }

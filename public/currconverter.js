@@ -1,6 +1,36 @@
+
+//Add React
+// ReactDOM.render({
+//   <App/>,document.getElementById("root")
+// });
+
 var url = "https://api.exchangerate-api.com/v4/latest/";
 
-var input = document.querySelectorAll("input")[0];
+
+// var secondCurrency = document.querySelectorAll("input")[1];
+
+// var xml = new XMLHttpRequest();
+
+// xml.open('GET',"https://api.exchangerate-api.com/v4/latest/USD",true);
+
+// xml.onload = function(response) {
+//    dataInJson = JSON.parse(xml.response);
+//     secondCurrency.value = dataInJson["USD"] * 80;
+// }
+
+// xml.send();
+
+//Add select with options instead of an unordered list
+//document.querySelector(.selectElement option:selected)
+
+
+
+// selection.addEventListener("click",function(){
+//   options.addEventListener("click",function(e){
+//       console.log(e.target.value);
+//   });
+// });
+
 
 var secondList = document.getElementById("second-list");
 
@@ -8,59 +38,64 @@ var secondList = document.getElementById("second-list");
 var firstList = document.getElementById("first-list");
 
 
-var switchValuesButton = document.querySelector(".image");
+var firstInput = document.querySelectorAll("input")[0];
 
-var firstInput = document.querySelectorAll("input")[0].value;
-
-var secondInput = document.querySelectorAll("input")[1].value;
+var secondInput = document.querySelectorAll("input")[1];
 
 
-function switchValues(firstInput,secondInput) {
-  console.log("Function called!");
-  if(firstInput != null || secondInput != null) {
-    temp.value = "";
-    temp.value = firstInput;
-    firstInput = secondInput;
-    secondInput = temp;
-  }
-  return document.querySelectorAll("input")[0].value = firstInput,document.querySelectorAll("input")[1].value = secondInput;
+function switchValues() {
+    console.log("Switch button clicked!");
+    var temp;
+    var convertFromInput = document.querySelectorAll("input")[0];
+    var convertToInput = document.querySelectorAll("input")[1];
+    temp = convertFromInput.value;
+    convertFromInput.value = convertToInput.value;
+    setTimeout(()=>{
+    convertToInput.value = temp;
+    },500);
+}
+
+function getCurrency(event) {
+  var selectedCurrency = event.target.id;
+  var CurrencyLabelButton = document.getElementById("currencyLabel");
+  CurrencyLabelButton.innerHTML = selectedCurrency;
+  return selectedCurrency;
+}
+
+function getSecondCurrency(event) {
+  document.getElementById("secondCurrencyLabel").innerHTML = event.target.id;
+  return event.target.id;
 }
 
 
-switchValuesButton.addEventListener("click",switchValues);
+ var request = new XMLHttpRequest();
 
- var request = new XMLHttpRequest();
-   
- var request = new XMLHttpRequest();
- firstList = document.getElementById("first-list");
+ var baseCurrency = getCurrency();
+ request.open('GET',url + baseCurrency,true);
+
+ var firstList = document.getElementById("first-list");
+
  firstList.addEventListener("click",function(e){
-     if(e.target && e.target.nodeName == "LI") {
-         document.getElementById("currency-label").innerHTML = e.target.id;
-     }
-     request.open('GET',url + e.target.id,true);
-     request.send();
-     request.onload = function() {
-         var data = JSON.parse(request.response);
-         var convertFrom = data.rates[e.target.id] * input;
-         console.log(convertFrom);
-         secondList.addEventListener("click",function(e){
-             var result = data.rates[this.id] * convertFrom;
-             return result
- 
-     });
-     }
-   
- });
-
-  
-  function getResult() {
-     document.querySelectorAll("input")[1].value = result;
-  
+   if(e.target && e.target.nodeName == "LI") {
+    request.onload = function() {
+      var data = JSON.parse(request.response);
+      console.log("Response:" + "" +  data);
+      function getConvertedFrom() {
+        var convertFrom = data.rates[baseCurrency] * firstInput.value;   
+    }
+  }
    }
+   request.send();
+ })
 
- document.getElementById("button1").addEventListener("click",getResult);
+  
 
-
+  secondList.addEventListener("click",function(e){
+    if(e.target && e.target.nodeName == "LI") {
+    var result = data.rates[""  + e.target.id + ""] * getConvertedFrom;
+      secondInput = result;
+    }  
+});
 
 
 

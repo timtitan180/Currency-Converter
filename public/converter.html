@@ -6,12 +6,14 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 	<link rel="stylesheet" href="converter.css">
+	<script src="https://unpkg.com/react@16.4.1/umd/react.production.min.js"></script>
+	<script src="https://unpkg.com/react-dom@16.4.1/umd/react-dom.production.min.js"></script>
 	<script type="text/javascript" src="currconverter.js"></script>
 	<title>$ Currency Converter</title>
 </head>
 <body>
-	<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">Currency Converter</a>
+	<nav class="navbar navbar-expand-lg navbar-light bg-light" style="box-shadow: inset 0px 0px 2px 1px green">
+  <a class="navbar-brand" href="#"><span><img src="money-exchange.png"/></span>Currency Converter</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -36,16 +38,18 @@
     </ul>
   	</div>
 	</nav>
+	<div style="width:100%;height:20px"><img style="width:100%;height:250px" src="https://wallpaperaccess.com/full/2399244.jpg"/></div>
 	<div class="container">
 	<div class="mainbox">
+		<App/>
 		<div class="input-group">
 			<input name="firstInput" type="text" class="form-control" aria-label="Text input with segmented dropdown button" placeholder="Enter Amount">
 			<div class="input-group-append">
-				<button type="button" class="btn btn-outline-primary" id="currency-label"><span id="after-input"></button>
+				<button type="button" class="btn btn-outline-primary" id="currencyLabel"></button>
 				<button type="button" class="btn btn-outline dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 					<span class="sr-only">Toggle Dropdown</span>
 				<div class="dropdown-menu" id="first-dropdown">
-					<ul class="list" id="first-list">
+					<ul class="list" id="first-list" onclick="getCurrency(event)">
 						<li id="USD">United States Dollar</li>
 						<li id="AED">Arab Emirates Dirham</li>
 						<li id="ARS">Argentinian Nuevo Peso</li>
@@ -77,14 +81,13 @@
 						<li id="KZT">Kazakhstan Tenge</li>
 						<li id="MXN">Mexican Peso</li>
 						<li id="MYR">Malaysian Ringgit</li>
-						<li id="NOK">
-							Norwegian Krone</li>
+						<li id="NOK">Norwegian Krone</li>
 						<li id="NSD">New Zealand Dollar</li>
 						<li id="PAB"> Panamanian Balboa</li>
 						<li id="PEN">Peruvian Sol</li>
 						<li id="PHP">Philippine Peso</li>
 						<li id="PKR">Pakistani Rupee</li>
-						<li id="PLN">Polish Złoty</li>
+						<li id="PLN">Polish Złoty</li>w3
 						<li id="PYG">Paraguayan Guaraní</li>
 						<li id="RON">Romanian Leu</li>
 						<li id="RUB">Russian Ruble</li>
@@ -101,67 +104,66 @@
 			</div>
 		</div>
 		<div class="image-container">
-		<img class="image" src="up-and-down.png">
+		<img class="image" src="up-and-down.png" onclick="switchValues()">
 		</div>
 		<div class="input-group second-input">
 			<input name="secondInput" id="second-input" type="text" placeholder="Get Amount Here" class="form-control" aria-label="Text input with segmented dropdown button">
 
 			<div class="input-group-append second-input">
-				<button type="button" id="second-currency-label" class="btn btn-outline-secondary"></button>
+				<button type="button" id="secondCurrencyLabel" class="btn btn-outline-secondary"></button>
 				<button type="button" id="secondlist" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 					<span class="sr-only">Toggle Dropdown</span>
 				<div class="dropdown-menu" id="second-dropdown">
-					<ul class="list" id="second-list">
-								<li class="USD">United States Dollar</li>
-								<li class="AED">Arab Emirates Dirham</li>
-								<li class="ARS">Argentinian Nuevo Peso</li>
-								<li class="AUD">Australian Dollar</li>
-								<li class="BGN">Bulgarian Lev</li>
-								<li class="BSD">Bahamian Dollar</li>
-								<li class="CAD">Canadian Dollar<li>
-								<li class="CHF">Swiss Franc</li>
-								<li class="CLP">Chilean Peso</li>
-								<li class="CNY">Chinese Yuan</li>
-								<li class="COP">Colombian Peso</li>
-								<li class="CZK">Czech Koruna</li>
-								<li class="DKK">Danish Krone</li>
-								<li class="DOP">Dominican Peso</li>
-								<li class="EGP">Egyptian Pound</li>
-								<li class="EUR">Euro</li>
-								<li class="FJD">Fijian Dollar</li>
-								<li class="GBP">Great Britain Pound Sterling</li>
-								<li class="GTQ">Guatemalan Quetzal</li>
-								<li class="HKD">Hong Kong Dollar</li>
-								<li class="HRK">Croation Kuna</li>
-								<li class="HUF">Hungarian Forint </li>
-								<li class="IDR">Indonesian Rupiah</li>
-								<li class="ILS">Israel New Shekel</li>
-								<li class="INR">Indian Rupee</li>
-								<li class="ISK">Icelandic króna</li>
-								<li class="JPY">Japanese Yen</li>
-								<li class="KRW">South Korean Won/li>
-								<li class="KZT">Kazakhstan Tenge</li>
-								<li class="MXN">Mexican Peso</li>
-								<li class="MYR">Malaysian Ringgit</li>
-								<li class="NOK">
-									Norwegian Krone</li>
-								<li class="NSD">New Zealand Dollar</li>
-								<li class="PAB"> Panamanian Balboa</li>
-								<li class="PEN">Peruvian Sol</li>
-								<li class="PHP">Philippine Peso</li>
-								<li class="PKR">Pakistani Rupee</li>
-								<li class="PLN">Polish Złoty</li>
-								<li class="PYG">Paraguayan Guaraní</li>
-								<li class="RON">Romanian Leu</li>
-								<li class="RUB">Russian Ruble</li>
-								<li class="SAR">Saudi Riyal</li>
-								<li class="SEK">Swedish Krona</li>
-								<li class="SGD">Singapore Dollar</li>
-								<li class="THB">Thai Baht</li>
-								<li class="TRY">Turkish Lira </li>
-								<li class="UAH">Ukrainian Hryvnia</li>
-								<li class="UYU">Uruguayan Peso</li>
-								<li class="ZAR">South African Rand</li>
+					<ul class="list" id="second-list" onclick="getSecondCurrency(event)">
+								<li class="currency" id="USD">United States Dollar</li>
+								<li class="currency" id="AED">Arab Emirates Dirham</li>
+								<li class="currency" id="ARS">Argentinian Nuevo Peso</li>
+								<li class="currency" id="AUD">Australian Dollar</li>
+								<li class="currency" id="BGN">Bulgarian Lev</li>
+								<li class="currency" id="BSD">Bahamian Dollar</li>
+								<li class="currency" id="CAD">Canadian Dollar<li>
+								<li class="currency" id="CHF">Swiss Franc</li>
+								<li class="currency" id="CLP">Chilean Peso</li>
+								<li class="currency" id="CNY">Chinese Yuan</li>
+								<li class="currency" id="COP">Colombian Peso</li>
+								<li class="currency" id="CZK">Czech Koruna</li>
+								<li class="currency" id="DKK">Danish Krone</li>
+								<li class="currency" id="DOP">Dominican Peso</li>
+								<li class="currency" id="EGP">Egyptian Pound</li>
+								<li class="currency" id="EUR">Euro</li>
+								<li class="currency" id="FJD">Fijian Dollar</li>
+								<li class="currency" id="GBP">Great Britain Pound Sterling</li>
+								<li class="currency" id="GTQ">Guatemalan Quetzal</li>
+								<li class="currency" id="HKD">Hong Kong Dollar</li>
+								<li class="currency" id="HRK">Croation Kuna</li>
+								<li class="currency" id="HUF">Hungarian Forint </li>
+								<li class="currency" id="IDR">Indonesian Rupiah</li>
+								<li class="currency" id="ILS">Israel New Shekel</li>
+								<li class="currency" id="INR">Indian Rupee</li>
+								<li class="currency" id="ISK">Icelandic króna</li>
+								<li class="currency" id="JPY">Japanese Yen</li>
+								<li class="currency" id="KRW">South Korean Won/li>
+								<li class="currency" id="KZT">Kazakhstan Tenge</li>
+								<li class="currency" id="MXN">Mexican Peso</li>
+								<li class="currency" id="MYR">Malaysian Ringgit</li>
+								<li class="currency" id="NOK">Norwegian Krone</li>
+								<li class="currency" id="NSD">New Zealand Dollar</li>
+								<li class="currency" id="PAB">Panamanian Balboa</li>
+								<li class="currency" id="PEN">Peruvian Sol</li>
+								<li class="currency" id="PHP">Philippine Peso</li>
+								<li class="currency" id="PKR">Pakistani Rupee</li>
+								<li class="currency" id="PLN">Polish Złoty</li>
+								<li class="currency" id="PYG">Paraguayan Guaraní</li>
+								<li class="currency" id="RON">Romanian Leu</li>
+								<li class="currency" id="RUB">Russian Ruble</li>
+								<li class="currency" id="SAR">Saudi Riyal</li>
+								<li class="currency" id="SEK">Swedish Krona</li>
+								<li class="currency" id="SGD">Singapore Dollar</li>
+								<li class="currency" id="THB">Thai Baht</li>
+								<li class="currency" id="TRY">Turkish Lira </li>
+								<li class="currency" id="UAH">Ukrainian Hryvnia</li>
+								<li class="currency" id="UYU">Uruguayan Peso</li>
+								<li class="currency" id="ZAR">South African Rand</li>
 							</ul>
 			</div>
 			</button>
@@ -174,10 +176,15 @@
 		</div>
 			<div class="wrapper">
 				<button id="button1" class="btn btn-outline-primary">Get Amount</button>
-
 			</div>
+			<div></div>
+			<div></div>
+			<section style="width:100%;height:80px"></section>
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+<script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
 </body>
 </html>
