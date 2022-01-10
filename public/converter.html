@@ -8,7 +8,6 @@
 	<link rel="stylesheet" href="converter.css">
 	<script src="https://unpkg.com/react@16.4.1/umd/react.production.min.js"></script>
 	<script src="https://unpkg.com/react-dom@16.4.1/umd/react-dom.production.min.js"></script>
-	<script type="text/javascript" src="currconverter.js"></script>
 	<title>$ Currency Converter</title>
 </head>
 <body>
@@ -38,10 +37,9 @@
     </ul>
   	</div>
 	</nav>
-	<div style="width:100%;height:20px"><img style="width:100%;height:250px" src="https://wallpaperaccess.com/full/2399244.jpg"/></div>
+	<div style="width:100%;height:20px"><img style="width:100%;height:270px;object-fit:cover; object-position:50% 50%" src="https://images.unsplash.com/photo-1602272385319-1dbf089994cf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1242&q=80"/></div>
 	<div class="container">
 	<div class="mainbox">
-		<App/>
 		<div class="input-group">
 			<input name="firstInput" type="text" class="form-control" aria-label="Text input with segmented dropdown button" placeholder="Enter Amount">
 			<div class="input-group-append">
@@ -49,7 +47,7 @@
 				<button type="button" class="btn btn-outline dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 					<span class="sr-only">Toggle Dropdown</span>
 				<div class="dropdown-menu" id="first-dropdown">
-					<ul class="list" id="first-list" onclick="getCurrency(event)">
+					<ul class="list" id="first-list">
 						<li id="USD">United States Dollar</li>
 						<li id="AED">Arab Emirates Dirham</li>
 						<li id="ARS">Argentinian Nuevo Peso</li>
@@ -83,11 +81,11 @@
 						<li id="MYR">Malaysian Ringgit</li>
 						<li id="NOK">Norwegian Krone</li>
 						<li id="NSD">New Zealand Dollar</li>
-						<li id="PAB"> Panamanian Balboa</li>
+						<li id="PAB">Panamanian Balboa</li>
 						<li id="PEN">Peruvian Sol</li>
 						<li id="PHP">Philippine Peso</li>
 						<li id="PKR">Pakistani Rupee</li>
-						<li id="PLN">Polish Złoty</li>w3
+						<li id="PLN">Polish Złoty</li>
 						<li id="PYG">Paraguayan Guaraní</li>
 						<li id="RON">Romanian Leu</li>
 						<li id="RUB">Russian Ruble</li>
@@ -104,7 +102,7 @@
 			</div>
 		</div>
 		<div class="image-container">
-		<img class="image" src="up-and-down.png" onclick="switchValues()">
+		<img class="image" src="up-and-down.png" onclick="switchValues()"/><span><div style="border-radius:0px;margin-top:70px;margin-left:250px;margin-bottom:50px;position:absolute;height:50px;width: 60px;background-color: black;box-shadow: 0 0 2px 4px black;" class="switchBubble"><p style="color:white">Switch Values</p></div></span>
 		</div>
 		<div class="input-group second-input">
 			<input name="secondInput" id="second-input" type="text" placeholder="Get Amount Here" class="form-control" aria-label="Text input with segmented dropdown button">
@@ -114,7 +112,7 @@
 				<button type="button" id="secondlist" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 					<span class="sr-only">Toggle Dropdown</span>
 				<div class="dropdown-menu" id="second-dropdown">
-					<ul class="list" id="second-list" onclick="getSecondCurrency(event)">
+					<ul class="list" id="second-list">
 								<li class="currency" id="USD">United States Dollar</li>
 								<li class="currency" id="AED">Arab Emirates Dirham</li>
 								<li class="currency" id="ARS">Argentinian Nuevo Peso</li>
@@ -174,8 +172,9 @@
 				</div>
 			</div>
 		</div>
+		<p class="conversionResult" id="conversionResult" style="position:absolute;color:purple"></p>
 			<div class="wrapper">
-				<button id="button1" class="btn btn-outline-primary">Get Amount</button>
+					<button id="button1" class="btn btn-outline-primary">Get Amount</button>
 			</div>
 			<div></div>
 			<div></div>
@@ -186,5 +185,6 @@
 <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
 <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
   <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+  <script type="text/javascript" src="currconverter.js"></script>
 </body>
 </html>

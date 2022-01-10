@@ -6,45 +6,21 @@
 
 var url = "https://api.exchangerate-api.com/v4/latest/";
 
-
-// var secondCurrency = document.querySelectorAll("input")[1];
-
-// var xml = new XMLHttpRequest();
-
-// xml.open('GET',"https://api.exchangerate-api.com/v4/latest/USD",true);
-
-// xml.onload = function(response) {
-//    dataInJson = JSON.parse(xml.response);
-//     secondCurrency.value = dataInJson["USD"] * 80;
-// }
-
-// xml.send();
-
-//Add select with options instead of an unordered list
-//document.querySelector(.selectElement option:selected)
-
-
-
-// selection.addEventListener("click",function(){
-//   options.addEventListener("click",function(e){
-//       console.log(e.target.value);
-//   });
-// });
-
-
 var secondList = document.getElementById("second-list");
-
-
-var firstList = document.getElementById("first-list");
 
 
 var firstInput = document.querySelectorAll("input")[0];
 
 var secondInput = document.querySelectorAll("input")[1];
 
+var resultText = document.getElementById("conversionResult");
+
+var switchButton = document.querySelector(".image");
+
+var switchBubble = document.querySelector(".switchBubble");
 
 function switchValues() {
-    console.log("Switch button clicked!");
+    console.log()
     var temp;
     var convertFromInput = document.querySelectorAll("input")[0];
     var convertToInput = document.querySelectorAll("input")[1];
@@ -55,47 +31,74 @@ function switchValues() {
     },500);
 }
 
-function getCurrency(event) {
-  var selectedCurrency = event.target.id;
-  var CurrencyLabelButton = document.getElementById("currencyLabel");
-  CurrencyLabelButton.innerHTML = selectedCurrency;
-  return selectedCurrency;
-}
+switchButton.addEventListener("mouseover",function(){
+    switchBubble.style.visibility = "visible";
+});
 
-function getSecondCurrency(event) {
-  document.getElementById("secondCurrencyLabel").innerHTML = event.target.id;
-  return event.target.id;
-}
+switchButton.addEventListener("mouseout",function(){
+  switchBubble.style.visibility = "hidden";
+});
+//  function getCurrency(event) {
+//    var selectedCurrency = event.target.id;
+//    var CurrencyLabelButton = document.getElementById("currencyLabel");
+//    CurrencyLabelButton.innerHTML = selectedCurrency; 
+//    return selectedCurrency;
+//  }
 
+//  var baseCurrency = getCurrency(event);
+
+// function getSecondCurrency(event) {
+//   document.getElementById("secondCurrencyLabel").innerHTML = event.target.id;
+//   return event.target.id;
+// }
+var button = document.getElementById("button1");
 
  var request = new XMLHttpRequest();
 
- var baseCurrency = getCurrency();
- request.open('GET',url + baseCurrency,true);
-
  var firstList = document.getElementById("first-list");
 
- firstList.addEventListener("click",function(e){
-   if(e.target && e.target.nodeName == "LI") {
+ firstList.addEventListener("click",function(e) {
+   var baseCurrency = e.target.id;
+   document.getElementById("currencyLabel").innerHTML = baseCurrency;
+   request.open('GET',url + baseCurrency,true);
     request.onload = function() {
       var data = JSON.parse(request.response);
-      console.log("Response:" + "" +  data);
-      function getConvertedFrom() {
-        var convertFrom = data.rates[baseCurrency] * firstInput.value;   
-    }
+        var convertFrom = data.rates[baseCurrency] * firstInput.value;
+        secondList.addEventListener("click",function(e) {
+          console.log("Event Listener function!");
+          var secondCurrency = e.target.id;
+          document.getElementById("secondCurrencyLabel").innerHTML = secondCurrency;
+          var result = convertFrom * data.rates[secondCurrency];
+          button.addEventListener("click",function(){
+            secondInput.value = Math.ceil(result * 1000) / 1000;
+            resultText.innerHTML += `${firstInput.value} ${baseCurrency} = ${secondInput.value} ${secondCurrency}`;
+            if(resultText.innerHTML != "") {
+              resultText.innerHTML =  `${firstInput.value} ${baseCurrency} = ${secondInput.value} ${secondCurrency}`;
+            }
+          });
+      });  
   }
-   }
    request.send();
- })
+ });
 
-  
+//  function getSecondEventListener() {
+//    console.log("Calling secondeventlistenerfunction")
+//   secondList.addEventListener("click",function(e) {
+//     console.log("Event Listener function!");
+//     var secondCurrency = e.target.id;
+//     document.getElementById("secondCurrencyLabel").innerHTML = secondCurrency;
+//     var result = convertFrom * data.rates[secondCurrency];
+//     getButtonListener();
+// }); 
+//  }
 
-  secondList.addEventListener("click",function(e){
-    if(e.target && e.target.nodeName == "LI") {
-    var result = data.rates[""  + e.target.id + ""] * getConvertedFrom;
-      secondInput = result;
-    }  
-});
+
+// function getSecondRate(e) {
+//   if(e.target && e.target.nodeName == "LI") {
+//     var result = data.rates[""  + e.target.id + ""] * convertFrom;
+//       secondInput.value = result;
+//     }
+// }
 
 
 
