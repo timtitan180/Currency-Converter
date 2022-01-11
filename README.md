@@ -11,6 +11,6 @@ Using Node JS to serve static files to the browser
 
 
 Features:
-<div><img src="C:\Users\timtu\Desktop\Currency-Conversion\public\images\currencyConversionResult.png"/></div>
+<div><img src="C:\Users\timtu\Desktop\currencyConverterResult.png"/></div>
 
 
