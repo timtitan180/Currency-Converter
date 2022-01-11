@@ -65,19 +65,6 @@ var button = document.getElementById("button1");
    request.send();
  });
 
-<<<<<<< HEAD
-
-
-
-
-
-
-
-
-=======
->>>>>>> a7c33bfe0733938f9091024c1461750df34fe3f0
-
-
 
 
 
