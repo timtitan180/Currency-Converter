@@ -2,9 +2,15 @@
 
 An application that converts currency.
 
-What I learned building this project
 
-HTML,CSS and using Event Listeners in Javascript
+Concepts Learned Building this Project:
+HTML,CSS and using Javascript.
+Utilizing XMLHttpRequest in Javascript to fetch currency API
+Adding Event Listeners to buttons and images
+Using Node JS to serve static files to the browser
 
-Fetching an API in the front-end using XMLHTTPRequest constructor
+
+Features:
+<div><img src="C:\Users\timtu\Desktop\Currency-Conversion\public\images\currencyConversionResult.png"/></div>
+
 
