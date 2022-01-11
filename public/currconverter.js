@@ -1,8 +1,4 @@
 
-//Add React
-// ReactDOM.render({
-//   <App/>,document.getElementById("root")
-// });
 
 var url = "https://api.exchangerate-api.com/v4/latest/";
 
@@ -38,19 +34,7 @@ switchButton.addEventListener("mouseover",function(){
 switchButton.addEventListener("mouseout",function(){
   switchBubble.style.visibility = "hidden";
 });
-//  function getCurrency(event) {
-//    var selectedCurrency = event.target.id;
-//    var CurrencyLabelButton = document.getElementById("currencyLabel");
-//    CurrencyLabelButton.innerHTML = selectedCurrency; 
-//    return selectedCurrency;
-//  }
 
-//  var baseCurrency = getCurrency(event);
-
-// function getSecondCurrency(event) {
-//   document.getElementById("secondCurrencyLabel").innerHTML = event.target.id;
-//   return event.target.id;
-// }
 var button = document.getElementById("button1");
 
  var request = new XMLHttpRequest();
@@ -81,24 +65,6 @@ var button = document.getElementById("button1");
    request.send();
  });
 
-//  function getSecondEventListener() {
-//    console.log("Calling secondeventlistenerfunction")
-//   secondList.addEventListener("click",function(e) {
-//     console.log("Event Listener function!");
-//     var secondCurrency = e.target.id;
-//     document.getElementById("secondCurrencyLabel").innerHTML = secondCurrency;
-//     var result = convertFrom * data.rates[secondCurrency];
-//     getButtonListener();
-// }); 
-//  }
-
-
-// function getSecondRate(e) {
-//   if(e.target && e.target.nodeName == "LI") {
-//     var result = data.rates[""  + e.target.id + ""] * convertFrom;
-//       secondInput.value = result;
-//     }
-// }
 
 
 
