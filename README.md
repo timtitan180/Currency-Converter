@@ -12,6 +12,6 @@ Using Node JS to serve static files to the browser
 
 Features:
 Get Currency Conversion with the result shown in the second text field as well as text of the conversion
-<img src="C:\Users\timtu\Desktop\Currency-Converter\public\images\currencyConverterResult.png"></img>
+<img src="currencyConverterResult.png"></img>
 
 
